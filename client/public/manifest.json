@@ -1,0 +1,15 @@
+{
+  "short_name": "Poll Opinion App",
+  "name": "Create React App Sample",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "96x96 32x32 16x16",
+      "type": "image/x-icon"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#512da8",
+  "background_color": "#ffffff"
+}

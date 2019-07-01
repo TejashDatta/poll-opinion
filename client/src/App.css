@@ -1,0 +1,92 @@
+:root {
+  --theme-color: #673ab7;
+}
+
+@media only screen and (max-width: 992px) {
+  nav .brand-logo {
+    left: 25px;
+    transform: translateX(0%);
+  }
+}
+@media only screen and (max-width: 600px) {
+  .container {
+    width: 100%;
+  }
+}
+
+input:not([type]):focus:not([readonly]),
+input[type="text"]:not(.browser-default):focus:not([readonly]),
+input[type="password"]:not(.browser-default):focus:not([readonly]),
+input[type="email"]:not(.browser-default):focus:not([readonly]),
+input[type="url"]:not(.browser-default):focus:not([readonly]),
+input[type="time"]:not(.browser-default):focus:not([readonly]),
+input[type="date"]:not(.browser-default):focus:not([readonly]),
+input[type="datetime"]:not(.browser-default):focus:not([readonly]),
+input[type="datetime-local"]:not(.browser-default):focus:not([readonly]),
+input[type="tel"]:not(.browser-default):focus:not([readonly]),
+input[type="number"]:not(.browser-default):focus:not([readonly]),
+input[type="search"]:not(.browser-default):focus:not([readonly]),
+textarea.materialize-textarea:focus:not([readonly]) {
+  border-bottom: 1px solid var(--theme-color);
+  box-shadow: 0 1px 0 0 var(--theme-color);
+}
+.select-wrapper input.select-dropdown:focus {
+  border-bottom: 1px solid var(--theme-color);
+}
+.dropdown-content li > a,
+.dropdown-content li > span,
+textarea.materialize-textarea:focus:not([readonly]) + label,
+input[type="text"]:not(.browser-default):focus:not([readonly]) + label {
+  color: var(--theme-color);
+}
+
+nav ul a.active {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+nav .dropdown-trigger {
+  padding: 0 5px;
+}
+.dropdown-content li > a {
+  color: #7e57c2;
+}
+
+.row.nomargin {
+  margin-bottom: 0;
+}
+@media only screen and (min-width: 600px) {
+  .text-center {
+    text-align: center;
+  }
+}
+
+.card-action span {
+  color: gray;
+}
+.foot-btn {
+  line-height: 1.4rem;
+  height: 1.4rem;
+  border: 0;
+  padding: 0;
+  background: none;
+  color: gray;
+  cursor: pointer;
+}
+.foot-btn:first-of-type {
+  margin-right: 1rem;
+}
+.foot-btn:focus {
+  background: none;
+}
+.foot-btn.active {
+  color: #512da8;
+}
+.foot-btn i {
+  margin-left: 0.5rem;
+  font-size: 1.3rem;
+}
+
+.modal {
+  display: block;
+  top: 30%;
+  z-index: 10;
+}

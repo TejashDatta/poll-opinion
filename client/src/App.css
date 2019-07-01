@@ -1,7 +1,10 @@
 :root {
   --theme-color: #673ab7;
 }
-
+img.loading {
+  margin: 70px auto;
+  display: block;
+}
 @media only screen and (max-width: 992px) {
   nav .brand-logo {
     left: 25px;

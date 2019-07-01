@@ -6,6 +6,7 @@ import M from "materialize-css";
 import NavBar from "./components/NavBar";
 import AddForm from "./components/AddForm";
 import PostItem from "./components/PostItem";
+import loading from "./loading.svg";
 
 class App extends React.Component {
   state = {
@@ -150,7 +151,11 @@ class App extends React.Component {
           <div className="row">
             <div className="col s12 xl8 push-xl2">
               <AddForm addPost={this.addPost} canPost={this.state.canPost} />
-              {this.state.loading ? <h4>Loading</h4> : postList}
+              {this.state.loading ? (
+                <img className="loading" src={loading} alt="Loading" />
+              ) : (
+                postList
+              )}
             </div>
           </div>
         </div>

@@ -30,4 +30,8 @@ app.use((err, req, res, next) => {
   res.status(400).json(err);
 });
 
-app.listen(process.env.port || 4000, () => console.log("Now listening"));
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname + "/client/build/index.html"));
+});
+
+app.listen(process.env.PORT || 4000, () => console.log("Now listening"));

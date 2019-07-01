@@ -14,6 +14,7 @@ mongoose.connect(
   "mongodb://tejash:gamecar976@ds345597.mlab.com:45597/heroku_qghjvhzn"
 );
 
+app.use(express.static(path.join(__dirname, "client/build")));
 app.use(bodyParser.json());
 
 app.use((req, res, next) => {
@@ -22,7 +23,6 @@ app.use((req, res, next) => {
 });
 
 //routes
-app.use(express.static("client/build"));
 app.use("/api", postRouter);
 
 app.use((err, req, res, next) => {

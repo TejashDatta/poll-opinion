@@ -19,7 +19,8 @@ app.use(express.static("client/build"));
 app.use(bodyParser.json());
 
 app.use((req, res, next) => {
-  req.IPaddress = req.connection.remoteAddress;
+  // req.IPaddress = req.connection.remoteAddress;
+  req.IPaddress = req.headers["x-forwarded-for"];
   next();
 });
 

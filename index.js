@@ -2,6 +2,7 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var mongoose = require("mongoose");
 var postRouter = require("./routes/postApi");
+var path = require("path");
 
 var app = express();
 
@@ -14,7 +15,7 @@ mongoose.connect(
   "mongodb://tejash:gamecar976@ds345597.mlab.com:45597/heroku_qghjvhzn"
 );
 
-app.use(express.static(path.join(__dirname, "client/build")));
+app.use(express.static("client/build"));
 app.use(bodyParser.json());
 
 app.use((req, res, next) => {

@@ -22,6 +22,7 @@ app.use((req, res, next) => {
 });
 
 //routes
+app.use(express.static("client/build"));
 app.use("/api", postRouter);
 
 app.use((err, req, res, next) => {

@@ -17,11 +17,9 @@ mongoose.connect(
 
 app.use(express.static("client/build"));
 app.use(bodyParser.json());
-
 app.use((req, res, next) => {
-  let ip1 = req.connection.remoteAddress;
+  // req.IPaddress = req.connection.remoteAddress;
   req.IPaddress = req.headers["x-forwarded-for"];
-  console.log(ip1, req.IPaddress);
   next();
 });
 

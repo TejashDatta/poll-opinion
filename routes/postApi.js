@@ -25,7 +25,7 @@ router.get("/posts", (req, res, next) => {
         };
       });
       Post.countDocuments({ userIP: req.IPaddress }).then(count => {
-        let canPost = !count ? false : true;
+        let canPost = count ? false : true;
         res.send({ canPost, posts: items });
       });
     });

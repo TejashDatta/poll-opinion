@@ -28,7 +28,7 @@ router.get("/posts", async (req, res, next) => {
   let userPosted = Post.findOne({ userIP: req.IPaddress });
   const qresults = await Promise.all([count, userPosted]);
   [count, userPosted] = qresults;
-  const canPost = userPosted ? true : false;
+  const canPost = !Boolean(userPosted);
   const canLoad = count - page * LIMIT > 0 ? true : false;
   res.send({ canPost, canLoad, posts: items });
 });

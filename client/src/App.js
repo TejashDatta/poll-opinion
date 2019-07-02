@@ -16,6 +16,7 @@ class App extends React.Component {
     sortBy: "Date",
     filter: "All",
     page: 1,
+    canLoad: false,
   };
 
   getPosts = () => {
@@ -26,6 +27,7 @@ class App extends React.Component {
       this.setState({
         loading: false,
         canPost: res.data.canPost,
+        canLoad: res.data.canLoad,
         posts:
           this.state.page === 1
             ? [...res.data.posts]
@@ -154,7 +156,24 @@ class App extends React.Component {
               {this.state.loading ? (
                 <img className="loading" src={loading} alt="Loading" />
               ) : (
-                postList
+                <div>
+                  {postList}
+                  {this.state.canLoad ? (
+                    <div className="card">
+                      <div className="card-content">
+                        <h5
+                          onClick={this.getPosts}
+                          className="text-center blue-text"
+                          style={{ margin: "1.5rem auto", cursor: "pointer" }}
+                        >
+                          Load More
+                        </h5>
+                      </div>
+                    </div>
+                  ) : (
+                    ""
+                  )}
+                </div>
               )}
             </div>
           </div>

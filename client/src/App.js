@@ -54,7 +54,7 @@ class App extends React.Component {
         this.setState({
           loading: false,
           canPost: false,
-          posts: [res.data, ...this.state.posts],
+          posts: [{ ...res.data, canDelete: true }, ...this.state.posts],
         });
       })
       .catch(err => console.log(err.response.data));

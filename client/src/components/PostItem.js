@@ -27,6 +27,7 @@ function PostItem({ post, likeHandler, flagHandler, removePost }) {
     flagsLength,
     liked,
     flagged,
+    canDelete,
   } = post;
   const dateDisplay = moment(date).fromNow();
   const color = colorSelect(party);
@@ -43,7 +44,11 @@ function PostItem({ post, likeHandler, flagHandler, removePost }) {
           </div>
           <div className="col s6 m4 push-m4">
             <div className="right">
-              <DeletePost removePost={() => removePost(_id)} />
+              {canDelete ? (
+                <DeletePost removePost={() => removePost(_id)} />
+              ) : (
+                ""
+              )}
               <Liker
                 icon="thumb_up"
                 votes={voteUpsLength}

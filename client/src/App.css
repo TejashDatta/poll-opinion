@@ -62,9 +62,6 @@ nav .dropdown-trigger {
   }
 }
 
-.card-action span {
-  color: gray;
-}
 .foot-btn {
   line-height: 1.4rem;
   height: 1.4rem;
@@ -92,4 +89,11 @@ nav .dropdown-trigger {
   display: block;
   top: 30%;
   z-index: 10;
+}
+.cover {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: white;
+  z-index: 2;
 }

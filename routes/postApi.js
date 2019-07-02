@@ -22,6 +22,7 @@ router.get("/posts", (req, res, next) => {
           ...post._doc,
           liked: post.voteUps.includes(req.IPaddress),
           flagged: post.flags.includes(req.IPaddress),
+          canDelete: post.userIP === req.IPaddress,
         };
       });
       Post.countDocuments({ userIP: req.IPaddress }).then(count => {

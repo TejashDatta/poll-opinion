@@ -34,8 +34,17 @@ class AddForm extends React.Component {
           <label htmlFor="other">Other party</label>
         </div>
       ) : null;
-    return this.props.canPost ? (
-      <div className="card">
+    return (
+      <div className="card" style={{ position: "relative" }}>
+        {!this.props.canPost ? (
+          <div className="card-content valign-wrapper cover">
+            <h4 className="text-center" style={{ margin: "1.5rem auto" }}>
+              Thank you for sharing your views
+            </h4>
+          </div>
+        ) : (
+          ""
+        )}
         <div className="card-content row">
           <form className="col s12" onSubmit={this.handleSubmit}>
             <div className="row nomargin">
@@ -84,14 +93,6 @@ class AddForm extends React.Component {
               </div>
             </div>
           </form>
-        </div>
-      </div>
-    ) : (
-      <div className="card">
-        <div className="card-content valign-wrapper">
-          <h4 className="text-center" style={{ margin: "1.5rem auto" }}>
-            Thank you for sharing your views
-          </h4>
         </div>
       </div>
     );

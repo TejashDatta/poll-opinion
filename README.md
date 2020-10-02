@@ -18,3 +18,7 @@
 <p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs/?username=tejashdatta&layout=compact" alt="tejashdatta" /></p>
 
 <p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=tejashdatta&show_icons=true" alt="tejashdatta" /></p>
+
+## About this Project 
+Poll Opinion is a web app where citizens can anonymously post their opinions regarding the parties that they voted for in the 2019 Indian National Elections.
+Back-end powered by Node.js and noSQL MongoDB database. Front-end designed with React and Materialize CSS.
